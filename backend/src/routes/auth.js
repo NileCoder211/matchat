@@ -1,17 +1,9 @@
 import express from "express";
 const router = express.Router();
+import {signup} from "../controllers/auth.controller.js"
 
 
-router.get("/signup", (req, res)=>{
-     console.log("Signup request body:", req.body);
-     try {
-
-    res.send("signup route");
-     } catch (error) {
-        console.log("error in signup route:", error);
-        res.send("error in signup route:", error.message);
-     }
-});
+router.post("/signup", signup);
 
 router.post("/signin", (req, res)=>{
     res.send("signin route");
