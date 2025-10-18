@@ -1,22 +1,22 @@
-//const express = require("express");
+
 import express from "express";
-import dotenv from "dotenv";
+import { ENV } from "./lib/env.js";
 import authRoutes from "./routes/auth.js";
 import path from "path";
 import { connectionDB } from "./lib/db.js";
 
-dotenv.config();
+
 
 const app = express();
 const __dirname = path.resolve();
-const PORT = process.env.PORT || 3003;
+const PORT = ENV.PORT || 3003;
 
 app.use(express.json());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 
 // make ready for deployment
-if(process.env.NODE_ENV === "production"){
+if(ENV.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
     
     app.get( (req, res)=>{
