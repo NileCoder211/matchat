@@ -2,8 +2,10 @@
 import express from "express";
 import { ENV } from "./lib/env.js";
 import authRoutes from "./routes/auth.js";
+import messageRoutes from "./routes/message.route.js";
 import path from "path";
 import { connectionDB } from "./lib/db.js";
+import cookieParser from "cookie-parser";
 
 
 
@@ -13,7 +15,9 @@ const PORT = ENV.PORT || 3003;
 
 app.use(express.json());
 app.use(express.json());
+app.use(cookieParser());
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 // make ready for deployment
 if(ENV.NODE_ENV === "production"){
