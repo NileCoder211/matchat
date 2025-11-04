@@ -100,7 +100,7 @@ export const logout =  (_, res)=>{
 export const updateProfile = async(req, res)=>{
     try {
         const {profilePicture} = req.body;
-        if(!profilePicture) return res.ststus(400).json({message: "Profile picture is required"})
+        if(!profilePicture) return res.status(400).json({message: "Profile picture is required"})
 
         const userId = req.user._id;
         
