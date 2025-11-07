@@ -19,7 +19,7 @@ function App() {
 
       <button onClick={ ()=> login()} className='z-10'>login</button>
       <Routes>
-        <Route path="/" element={authUser ? <ChatPage /> : <Navigate to={"/login"} />} />
+        <Route path="/" element={authUser ? <ChatPage /> : <Navigate to={"/signup"} />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to={"/"} />} />
         <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />} />
       </Routes>
