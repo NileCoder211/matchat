@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=20.0.0"
   "engines":{
-    "node": ">=22.11.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
