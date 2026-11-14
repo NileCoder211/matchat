@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // Your local frontend
-      "https://matchat-jepjc.sevalla.app/", // Your production frontend
+      "http://localhost:5173",
+      "https://matchat.onrender.com/",
     ],
     credentials: true,
   })
